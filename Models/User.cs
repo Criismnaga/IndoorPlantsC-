@@ -1,3 +1,4 @@
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -18,4 +19,10 @@ public class User
     [Column(TypeName = "decimal(10,2)")]
     public double AvailableTime { get; set; }
     public int ExperiencELevel { get; set; }
+    public ICollection<Plant> Plants { get; set; }
+
+    public User()
+    {
+        Plants = new Collection<Plant>();
+    }
 }
